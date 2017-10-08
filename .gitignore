@@ -2,4 +2,6 @@ bin/
 lib/
 pip-selfcheck.json
 include/
+.Python
+.idea/
 
