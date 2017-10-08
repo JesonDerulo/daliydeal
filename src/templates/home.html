@@ -1,0 +1,8 @@
+
+{% for post in posts%}
+<h1>{{ post.title }}</h1>
+<p>Posted {{ post.publish_date }}</p>
+<p>Expire at {{ post.expire_date}}</p>
+<p>{{ post.description }}</p>
+
+{% endfor %}
