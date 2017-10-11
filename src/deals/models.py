@@ -1,13 +1,14 @@
 from django.db import models
-
-import datetime
+from datetime import datetime, timedelta
 # Create your models here.
 
 class DealManager(models.Manager):
     def active(self):
+        time_threshold = datetime.now() + timedelta(minutes=60)
+        print(time_threshold)
         return super(DealManager, self).\
             filter(active=True).\
-            filter(expire_date__gt=datetime.datetime.now()).\
+            filter(expire_date__gt=time_threshold).\
             order_by("expire_date")
 
 class Deal(models.Model):
